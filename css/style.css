@@ -462,13 +462,8 @@ ul.check-list li::after {
   background-color: #1f6f8b;
   background-image: linear-gradient(160deg, #1f6f8b 55%, #18546a 100%);
   color: #ffffff;
-  padding: 2rem 0 4.5rem;
-}
-
-.hero-lead {
-  font-size: 1.125rem;
-  color: #ffffff;
-  margin-bottom: 0;
+  padding: 2rem 0 3rem;
+  margin-bottom: 3rem;
 }
 
 .breadcrumb {
@@ -498,31 +493,6 @@ ul.check-list li::after {
   color: #ffffff;
   font-weight: 700;
   border-bottom: 2px solid #e2a64b;
-}
-
-.alert-card {
-  position: relative;
-  margin-top: -3rem;
-  margin-bottom: 3rem;
-  padding: 1.5rem;
-  background: #ffffff;
-  border-left: 0.5rem solid #e2a64b;
-  border-radius: 0.75rem;
-  box-shadow: 0 0.75rem 2rem rgba(20, 21, 23, 0.16);
-}
-
-.alert-kicker {
-  margin: 0 0 0.25rem;
-  font-size: 0.875rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #1f6f8b;
-}
-
-.alert-text {
-  margin: 0;
-  color: #141517;
 }
 
 .library-section {
@@ -876,21 +846,14 @@ address {
   .container {
     padding: 0 2rem;
   }
+  .hero {
+    padding: 3rem 0;
+  }
   .logo img {
     width: 4.5rem;
   }
   .logo-word {
     font-size: 1.875rem;
-  }
-  .hero {
-    padding: 3rem 0 5.5rem;
-  }
-  .hero-lead {
-    font-size: 1.25rem;
-  }
-  .alert-card {
-    max-width: 40rem;
-    margin-top: -3.5rem;
   }
   .swatch-grid {
     grid-template-columns: repeat(5, 1fr);

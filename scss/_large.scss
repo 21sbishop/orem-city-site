@@ -13,6 +13,10 @@
     padding: 0 $space-5;
   }
 
+  .hero {
+    padding: $space-6 0;
+  }
+
   .logo img {
     width: 4.5rem;
   }
@@ -21,18 +25,8 @@
     font-size: 1.875rem;
   }
 
-  .hero {
-    padding: $space-6 0 $space-7 + $space-3;
-  }
 
-  .hero-lead {
-    font-size: 1.25rem;
-  }
 
-  .alert-card {
-    max-width: 40rem;
-    margin-top: -$space-6 - $space-2;
-  }
 
   .swatch-grid {
     grid-template-columns: repeat(5, 1fr);

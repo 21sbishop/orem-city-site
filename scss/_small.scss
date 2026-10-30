@@ -294,13 +294,8 @@ ul.check-list {
   background-color: $color-primary;
   background-image: linear-gradient(160deg, $color-primary 55%, $color-primary-dark 100%);
   color: $color-paper;
-  padding: $space-5 0 $space-7;
-}
-
-.hero-lead {
-  font-size: 1.125rem;
-  color: $color-paper;
-  margin-bottom: 0;
+  padding: $space-5 0 $space-6;
+  margin-bottom: $space-6;
 }
 
 // Breadcrumb (way-finding)
@@ -331,33 +326,6 @@ ul.check-list {
     font-weight: 700;
     border-bottom: 2px solid $color-secondary;
   }
-}
-
-// ---------- Alert card (visual tangent: overlaps the hero edge) ----------
-
-.alert-card {
-  position: relative;
-  margin-top: -$space-6;
-  margin-bottom: $space-6;
-  padding: $space-4;
-  background: $color-paper;
-  border-left: 0.5rem solid $color-secondary;
-  border-radius: $radius;
-  box-shadow: $shadow;
-}
-
-.alert-kicker {
-  margin: 0 0 $space-1;
-  font-size: $fs-small;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: $color-primary;
-}
-
-.alert-text {
-  margin: 0;
-  color: $color-ink;
 }
 
 // ---------- Library sections ----------
