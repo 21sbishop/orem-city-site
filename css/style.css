@@ -381,6 +381,7 @@ ul.check-list li::after {
   height: 3rem;
   padding: 0;
   background: #1f6f8b;
+  color: #ffffff;
   border: 0;
   border-radius: 0.75rem;
   cursor: pointer;
@@ -572,6 +573,7 @@ ul.check-list li::after {
 
 .footer-logo {
   margin: 0 0 1.5rem;
+  color: #ffffff;
 }
 
 .footer-logo .logo-word {
