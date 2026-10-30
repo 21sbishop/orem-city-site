@@ -1,0 +1,494 @@
+// ===== Small screens (mobile-first base styles, 320px and up) =====
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-body;
+  font-size: $fs-base;
+  line-height: $lh-body;
+  color: $color-ink;
+  background-color: $color-paper;
+  overflow-x: hidden;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: $color-primary;
+  text-underline-offset: 0.2em;
+
+  &:hover {
+    color: $color-primary-dark;
+    text-decoration-thickness: 2px;
+  }
+}
+
+:focus-visible {
+  outline: 3px solid $color-secondary;
+  outline-offset: 3px;
+}
+
+.container {
+  width: 100%;
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $gutter;
+}
+
+.skip-link {
+  position: absolute;
+  left: $space-3;
+  top: -10rem;
+  z-index: 100;
+  padding: $space-2 $space-3;
+  background: $color-secondary;
+  color: $color-ink;
+  font-weight: 700;
+  border-radius: $radius;
+
+  &:focus {
+    top: $space-3;
+  }
+}
+
+// ---------- Sample tags ----------
+
+h1,
+h2,
+h3 {
+  font-family: $font-heading;
+  line-height: $lh-heading;
+  color: $color-primary;
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin: 0 0 $space-3;
+  color: $color-paper;
+  letter-spacing: -0.01em;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 4rem;
+    height: 0.3rem;
+    margin-top: $space-3;
+    background: $color-secondary;
+    border-radius: 1rem;
+  }
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 $space-3;
+  padding-bottom: $space-2;
+  border-bottom: 2px solid $color-line;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: $space-4 0 $space-2;
+  color: $color-primary-dark;
+}
+
+p {
+  margin: 0 0 $space-3;
+  max-width: 65ch;
+  color: $color-ink-soft;
+}
+
+// Unordered list with a custom bullet
+ul.check-list {
+  list-style: none;
+  margin: 0 0 $space-3;
+  padding: 0;
+
+  li {
+    position: relative;
+    padding-left: 1.75rem;
+    margin-bottom: $space-2;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.3em;
+      width: 1.1rem;
+      height: 1.1rem;
+      border-radius: 50%;
+      background-color: $color-secondary;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0.4rem;
+      top: 0.45em;
+      width: 0.3rem;
+      height: 0.6rem;
+      border: solid $color-primary-dark;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+// ---------- Header + hamburger navigation ----------
+
+.site-header {
+  position: relative;
+  z-index: 10;
+  background: $color-paper;
+  border-top: 0.375rem solid $color-secondary;
+  box-shadow: 0 2px 0 $color-line;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 4.5rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+// Logo: Figma mark + OREM wordmark
+.logo,
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  text-decoration: none;
+  line-height: 1;
+
+  img {
+    width: 3.5rem;
+  }
+}
+
+.logo-word {
+  font-family: $font-heading;
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $color-ink;
+}
+
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  background: $color-primary;
+  border: 0;
+  border-radius: $radius;
+  cursor: pointer;
+
+  &:hover {
+    background: $color-primary-dark;
+  }
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 1.5rem;
+  height: 3px;
+  background: $color-paper;
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-toggle-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+// Bars turn into an X when the menu is open
+.nav-toggle[aria-expanded="true"] {
+  .nav-toggle-bar:nth-child(1) {
+    transform: translateY(0.49rem) rotate(45deg);
+  }
+
+  .nav-toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle-bar:nth-child(3) {
+    transform: translateY(-0.49rem) rotate(-45deg);
+  }
+}
+
+.nav-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: $space-2 0;
+  list-style: none;
+  background: $color-primary;
+  box-shadow: $shadow;
+
+  &.is-open {
+    display: block;
+  }
+
+  a {
+    display: block;
+    padding: $space-3 $space-4;
+    color: $color-paper;
+    font-weight: 600;
+    text-decoration: none;
+    border-left: 0.3rem solid transparent;
+
+    &:hover {
+      background: $color-primary-dark;
+      color: $color-paper;
+    }
+
+    // Way-finding: current page indicator
+    &.is-current {
+      border-left-color: $color-secondary;
+      background: $color-primary-dark;
+    }
+  }
+}
+
+// ---------- Hero ----------
+
+.hero {
+  background-color: $color-primary;
+  background-image: linear-gradient(160deg, $color-primary 55%, $color-primary-dark 100%);
+  color: $color-paper;
+  padding: $space-5 0 $space-7;
+}
+
+.hero-lead {
+  font-size: 1.125rem;
+  color: $color-paper;
+  margin-bottom: 0;
+}
+
+// Breadcrumb (way-finding)
+.breadcrumb {
+  margin-bottom: $space-4;
+  font-size: $fs-small;
+
+  ol {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li + li::before {
+    content: "\203A";
+    padding: 0 $space-2;
+    color: $color-secondary;
+  }
+
+  a {
+    color: $color-paper;
+  }
+
+  [aria-current="page"] {
+    color: $color-paper;
+    font-weight: 700;
+    border-bottom: 2px solid $color-secondary;
+  }
+}
+
+// ---------- Alert card (visual tangent: overlaps the hero edge) ----------
+
+.alert-card {
+  position: relative;
+  margin-top: -$space-6;
+  margin-bottom: $space-6;
+  padding: $space-4;
+  background: $color-paper;
+  border-left: 0.5rem solid $color-secondary;
+  border-radius: $radius;
+  box-shadow: $shadow;
+}
+
+.alert-kicker {
+  margin: 0 0 $space-1;
+  font-size: $fs-small;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $color-primary;
+}
+
+.alert-text {
+  margin: 0;
+  color: $color-ink;
+}
+
+// ---------- Content ----------
+
+.content-section {
+  margin-bottom: $space-6;
+  scroll-margin-top: $space-4;
+}
+
+.service-grid {
+  display: grid;
+  gap: $space-4;
+  margin-top: $space-4;
+}
+
+.service-card {
+  padding: $space-4;
+  background: $color-mist;
+  border-top: 0.3rem solid $color-primary;
+  border-radius: 0 0 $radius $radius;
+
+  h3 {
+    margin-top: 0;
+  }
+
+  p {
+    color: $color-ink;
+  }
+}
+
+// ---------- Footer ----------
+
+.site-footer {
+  background: $gray-900;
+  color: $color-paper;
+  padding-top: $space-6;
+  border-top: 0.375rem solid $color-secondary;
+
+  a {
+    color: $color-secondary;
+
+    &:hover {
+      color: $color-paper;
+    }
+  }
+}
+
+.footer-inner {
+  display: grid;
+  gap: $space-5;
+  padding-bottom: $space-5;
+}
+
+.footer-logo {
+  margin: 0 0 $space-4;
+
+  .logo-word {
+    color: $color-paper;
+  }
+}
+
+address {
+  font-style: normal;
+  line-height: 1.7;
+}
+
+.footer-heading {
+  font-size: 1.125rem;
+  color: $color-paper;
+  margin-bottom: $space-3;
+  padding-bottom: $space-2;
+  border-bottom: 2px solid $color-secondary;
+  display: inline-block;
+}
+
+.footer-contact {
+  list-style: none;
+  margin: 0 0 $space-2;
+  padding: 0;
+
+  li {
+    margin-bottom: $space-2;
+  }
+
+  a {
+    font-weight: 600;
+  }
+}
+
+.footer-hours {
+  color: $color-paper;
+  margin: 0;
+}
+
+.social-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-3;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    background: $color-secondary;
+    color: $color-primary-dark;
+
+    &:hover {
+      background: $color-paper;
+      color: $color-primary-dark;
+    }
+  }
+
+  svg {
+    width: 1.375rem;
+    height: 1.375rem;
+    fill: currentColor;
+  }
+}
+
+.footer-bottom {
+  background: #000000;
+  padding: $space-3 0;
+
+  p {
+    margin: 0;
+    max-width: none;
+    font-size: $fs-small;
+    color: $color-paper;
+  }
+}

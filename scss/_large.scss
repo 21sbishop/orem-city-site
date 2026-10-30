@@ -1,0 +1,72 @@
+// ===== Medium and large screens (media queries live here) =====
+
+@media (min-width: $bp-medium) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .container {
+    padding: 0 $space-5;
+  }
+
+  .logo img {
+    width: 4.5rem;
+  }
+
+  .logo-word {
+    font-size: 1.875rem;
+  }
+
+  .hero {
+    padding: $space-6 0 $space-7 + $space-3;
+  }
+
+  .hero-lead {
+    font-size: 1.25rem;
+  }
+
+  .alert-card {
+    max-width: 40rem;
+    margin-top: -$space-6 - $space-2;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: $bp-large) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  // The hamburger becomes a dropdown panel anchored to the button
+  .site-nav {
+    position: relative;
+  }
+
+  .nav-menu {
+    left: auto;
+    right: 0;
+    top: calc(100% + #{$space-3});
+    min-width: 16rem;
+    border-radius: $radius;
+    overflow: hidden;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-inner {
+    grid-template-columns: 1.4fr 1fr 1fr;
+  }
+}
