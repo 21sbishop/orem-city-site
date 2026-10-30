@@ -26,3 +26,29 @@ document.addEventListener("keydown", (event) => {
 document.addEventListener("click", (event) => {
   if (!event.target.closest(".site-nav")) setMenu(false);
 });
+
+// Way-finding: highlight the nav link for the section in view
+const links = [...menu.querySelectorAll("a[href^='#']")];
+const sections = links
+  .map((link) => document.querySelector(link.getAttribute("href")))
+  .filter(Boolean);
+
+function setCurrent(id) {
+  links.forEach((link) => {
+    const isCurrent = link.getAttribute("href") === `#${id}`;
+    link.classList.toggle("is-current", isCurrent);
+    if (isCurrent) link.setAttribute("aria-current", "true");
+    else link.removeAttribute("aria-current");
+  });
+}
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) setCurrent(entry.target.id);
+    });
+  },
+  { rootMargin: "-40% 0px -55% 0px" }
+);
+
+sections.forEach((section) => observer.observe(section));

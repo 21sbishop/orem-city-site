@@ -151,7 +151,8 @@ ul.check-list {
 // ---------- Header + hamburger navigation ----------
 
 .site-header {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 10;
   background: $color-paper;
   border-top: 0.375rem solid $color-secondary;
@@ -359,32 +360,218 @@ ul.check-list {
   color: $color-ink;
 }
 
-// ---------- Content ----------
+// ---------- Library sections ----------
 
-.content-section {
-  margin-bottom: $space-6;
-  scroll-margin-top: $space-4;
+.library-section {
+  margin-bottom: $space-7;
+  scroll-margin-top: 6rem;
 }
 
-.service-grid {
+.hero {
+  scroll-margin-top: 6rem;
+}
+
+// Color swatches
+$swatches: (
+  "swatch-primary": $color-primary,
+  "swatch-secondary": $color-secondary,
+  "gray-050": $gray-050,
+  "gray-100": $gray-100,
+  "gray-200": $gray-200,
+  "gray-300": $gray-300,
+  "gray-400": $gray-400,
+  "gray-500": $gray-500,
+  "gray-600": $gray-600,
+  "gray-700": $gray-700,
+  "gray-800": $gray-800,
+  "gray-900": $gray-900
+);
+
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-4 $space-3;
+  margin: 0 0 $space-5;
+  padding: 0;
+  list-style: none;
+}
+
+.swatch-grid-brand {
+  grid-template-columns: 1fr;
+}
+
+.swatch {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.swatch-chip {
+  display: block;
+  height: 4.5rem;
+  margin-bottom: $space-1;
+  border: 1px solid $gray-200;
+  border-radius: $radius;
+}
+
+.swatch-grid-brand .swatch-chip {
+  height: 7.5rem;
+  border: 0;
+}
+
+@each $name, $color in $swatches {
+  .#{$name} {
+    background-color: $color;
+  }
+}
+
+.swatch-name {
+  font-weight: 600;
+  color: $color-ink;
+}
+
+.swatch-value,
+.swatch-token {
+  font-family: $font-body;
+  font-size: $fs-small;
+  color: $color-ink-soft;
+}
+
+.swatch-token {
+  color: $color-primary;
+  font-weight: 600;
+}
+
+// Type specimen
+.specimen {
+  display: flex;
+  flex-direction: column;
+  padding: $space-4;
+  margin-bottom: $space-5;
+  background: $color-mist;
+  border-left: 0.5rem solid $color-primary;
+  border-radius: 0 $radius $radius 0;
+}
+
+.specimen-label {
+  margin: 0;
+  font-size: $fs-small;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $color-ink-soft;
+}
+
+.specimen-aa {
+  margin: 0;
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: $color-primary;
+}
+
+// Sample tags
+.tag-list {
+  margin: 0;
+}
+
+.tag-row {
+  padding: $space-4 0;
+  border-bottom: 1px solid $color-line;
+
+  dt {
+    margin-bottom: $space-2;
+    font-size: $fs-small;
+    font-weight: 600;
+    color: $color-ink-soft;
+  }
+
+  dd {
+    margin: 0;
+  }
+
+  dd p {
+    margin-bottom: 0;
+  }
+
+  code {
+    padding: 0.1rem 0.4rem;
+    margin-right: $space-1;
+    background: $color-primary;
+    color: $color-paper;
+    border-radius: 0.25rem;
+  }
+}
+
+.sample-h1,
+.sample-h2,
+.sample-h3 {
+  font-family: $font-heading;
+  line-height: $lh-heading;
+  color: $color-primary;
+}
+
+.sample-h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+}
+
+.sample-h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.sample-h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $color-primary-dark;
+}
+
+// Logo cards
+.logo-cards {
   display: grid;
   gap: $space-4;
-  margin-top: $space-4;
+  margin-bottom: $space-4;
 }
 
-.service-card {
-  padding: $space-4;
-  background: $color-mist;
-  border-top: 0.3rem solid $color-primary;
-  border-radius: 0 0 $radius $radius;
+.logo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-3;
+  margin: 0;
+  padding: $space-5 $space-4;
+  border-radius: $radius * 1.5;
 
-  h3 {
-    margin-top: 0;
+  img {
+    width: 7.5rem;
   }
 
-  p {
-    color: $color-ink;
+  figcaption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $space-1;
   }
+}
+
+.logo-card-light {
+  background: $gray-050;
+  border: 1px solid $gray-200;
+}
+
+.logo-card-dark {
+  background: $gray-900;
+
+  .logo-word,
+  .logo-card-note {
+    color: $color-paper;
+  }
+}
+
+.logo-card-note {
+  font-size: $fs-small;
+  color: $color-ink-soft;
 }
 
 // ---------- Footer ----------

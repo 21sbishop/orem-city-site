@@ -3,27 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Residents | City of Orem</title>
-  <meta name="description" content="Resident services for the City of Orem: trash and recycling, permits, parks, utilities, and how to reach City Hall.">
+  <title>Design Library | City of Orem</title>
+  <meta name="description" content="The City of Orem design library: brand colors, a 10-step grey scale, Work Sans typography, sample tags, and the Orem logo mark.">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="City of Orem">
-  <meta property="og:title" content="Residents | City of Orem">
-  <meta property="og:description" content="Resident services for the City of Orem: trash and recycling, permits, parks, utilities, and how to reach City Hall.">
+  <meta property="og:title" content="Design Library | City of Orem">
+  <meta property="og:description" content="The City of Orem design library: brand colors, a 10-step grey scale, Work Sans typography, sample tags, and the Orem logo mark.">
   <meta property="og:url" content="https://21sbishop.github.io/orem-city-site/">
   <meta property="og:image" content="https://21sbishop.github.io/orem-city-site/images/og-image.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="City of Orem mountain logo mark on a teal background">
+  <meta property="og:image:alt" content="City of Orem Design Library: logo mark with primary and secondary color swatches">
   <meta property="og:locale" content="en_US">
   <meta property="og:logo" content="https://21sbishop.github.io/orem-city-site/web-app-manifest-512x512.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Residents | City of Orem">
-  <meta name="twitter:description" content="Resident services for the City of Orem: trash and recycling, permits, parks, utilities, and how to reach City Hall.">
+  <meta name="twitter:title" content="Design Library | City of Orem">
+  <meta name="twitter:description" content="The City of Orem design library: brand colors, a 10-step grey scale, Work Sans typography, sample tags, and the Orem logo mark.">
   <meta name="twitter:image" content="https://21sbishop.github.io/orem-city-site/images/og-image.png">
-  <meta name="twitter:image:alt" content="City of Orem mountain logo mark on a teal background">
+  <meta name="twitter:image:alt" content="City of Orem Design Library: logo mark with primary and secondary color swatches">
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
@@ -50,7 +50,7 @@
       <a class="logo" href="index.html">
         <img src="images/logo-mark-light.svg" alt="" width="120" height="90">
         <span class="logo-word">Orem</span>
-        <span class="visually-hidden">City of Orem home</span>
+        <span class="visually-hidden">City of Orem Design Library home</span>
       </a>
 
       <nav class="site-nav" aria-label="Main">
@@ -61,10 +61,10 @@
           <span class="nav-toggle-label">Menu</span>
         </button>
         <ul class="nav-menu" id="nav-menu">
-          <li><a href="#main">Home</a></li>
-          <li><a href="#main" class="is-current" aria-current="page">Residents</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#council">City Council</a></li>
+          <li><a href="#overview" class="is-current" aria-current="true">Overview</a></li>
+          <li><a href="#colors">Colors</a></li>
+          <li><a href="#typography">Typography</a></li>
+          <li><a href="#logo">Logo</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -72,70 +72,123 @@
   </header>
 
   <main id="main">
-    <section class="hero">
+    <section class="hero" id="overview" aria-labelledby="page-title">
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb">
           <ol>
-            <li><a href="index.html">Home</a></li>
-            <li><span aria-current="page">Residents</span></li>
+            <li><a href="index.html">City of Orem</a></li>
+            <li><span aria-current="page">Design Library</span></li>
           </ol>
         </nav>
-        <h1>Residents</h1>
-        <p class="hero-lead">Everything you need to live, work, and play in Family City USA, all in one place.</p>
+        <h1 id="page-title">Design Library</h1>
+        <p class="hero-lead">The shared foundations for every City of Orem screen: brand colors, a grey scale, one type family, and the city logo mark.</p>
       </div>
     </section>
 
     <div class="container">
-      <aside class="alert-card" aria-label="City notice">
-        <p class="alert-kicker">City Notice</p>
-        <p class="alert-text">Fall leaf pickup begins <strong>November 3</strong>. Rake leaves to the curb by 7&nbsp;a.m. on your normal collection day.</p>
+      <aside class="alert-card" aria-label="Library details">
+        <p class="alert-kicker">Version 1.0 &middot; 2610 Project</p>
+        <p class="alert-text">Use these tokens as written. Every color, size, and logo on a City of Orem page should come from this library.</p>
       </aside>
 
-      <section class="content-section" id="services" aria-labelledby="services-heading">
-        <h2 id="services-heading">Resident Services</h2>
-        <p>The City of Orem provides dependable services to nearly 100,000 residents. From clean water to safe streets, our departments work every day to keep Utah Valley&rsquo;s Family City running.</p>
+      <!-- ===== Colors ===== -->
+      <section class="library-section" id="colors" aria-labelledby="colors-heading">
+        <h2 id="colors-heading">Colors</h2>
+        <p>Primary teal carries headings, links, and navigation. Secondary amber is an accent for highlights, bullets, and focus rings. Never set body text in amber on white.</p>
 
-        <div class="service-grid">
-          <article class="service-card">
-            <h3>Trash &amp; Recycling</h3>
-            <p>Curbside collection runs weekly. Recycling is picked up every other week on the same day as trash.</p>
-            <ul class="check-list">
-              <li>Find your collection day</li>
-              <li>Request a new cart</li>
-              <li>Schedule a bulk-item pickup</li>
-            </ul>
-          </article>
+        <h3>Brand Colors</h3>
+        <ul class="swatch-grid swatch-grid-brand">
+          <li class="swatch">
+            <span class="swatch-chip swatch-primary"></span>
+            <span class="swatch-name">Primary</span>
+            <code class="swatch-value">#1F6F8B</code>
+            <code class="swatch-token">$color-primary</code>
+          </li>
+          <li class="swatch">
+            <span class="swatch-chip swatch-secondary"></span>
+            <span class="swatch-name">Secondary</span>
+            <code class="swatch-value">#E2A64B</code>
+            <code class="swatch-token">$color-secondary</code>
+          </li>
+        </ul>
 
-          <article class="service-card">
-            <h3>Permits &amp; Licenses</h3>
-            <p>Planning a fence, deck, or new business? Most permits can be started online and reviewed in five business days.</p>
-            <ul class="check-list">
-              <li>Building and remodel permits</li>
-              <li>Business licenses</li>
-              <li>Special event permits</li>
-            </ul>
-          </article>
-
-          <article class="service-card">
-            <h3>Parks &amp; Recreation</h3>
-            <p>Orem maintains more than 20 parks, miles of canal-side trail, and the Orem Fitness Center.</p>
-            <ul class="check-list">
-              <li>Reserve a picnic shelter</li>
-              <li>Register for youth sports</li>
-              <li>View the trail map</li>
-            </ul>
-          </article>
-        </div>
+        <h3>Grey Scale</h3>
+        <ul class="swatch-grid swatch-grid-gray">
+          <li class="swatch"><span class="swatch-chip gray-050"></span><span class="swatch-name">gray/050</span><code class="swatch-value">#F7F7F8</code></li>
+          <li class="swatch"><span class="swatch-chip gray-100"></span><span class="swatch-name">gray/100</span><code class="swatch-value">#EDEEEF</code></li>
+          <li class="swatch"><span class="swatch-chip gray-200"></span><span class="swatch-name">gray/200</span><code class="swatch-value">#DADCDE</code></li>
+          <li class="swatch"><span class="swatch-chip gray-300"></span><span class="swatch-name">gray/300</span><code class="swatch-value">#BBBFC3</code></li>
+          <li class="swatch"><span class="swatch-chip gray-400"></span><span class="swatch-name">gray/400</span><code class="swatch-value">#93989E</code></li>
+          <li class="swatch"><span class="swatch-chip gray-500"></span><span class="swatch-name">gray/500</span><code class="swatch-value">#6E747B</code></li>
+          <li class="swatch"><span class="swatch-chip gray-600"></span><span class="swatch-name">gray/600</span><code class="swatch-value">#52585F</code></li>
+          <li class="swatch"><span class="swatch-chip gray-700"></span><span class="swatch-name">gray/700</span><code class="swatch-value">#3B4046</code></li>
+          <li class="swatch"><span class="swatch-chip gray-800"></span><span class="swatch-name">gray/800</span><code class="swatch-value">#26292D</code></li>
+          <li class="swatch"><span class="swatch-chip gray-900"></span><span class="swatch-name">gray/900</span><code class="swatch-value">#141517</code></li>
+        </ul>
       </section>
 
-      <section class="content-section" id="council" aria-labelledby="council-heading">
-        <h2 id="council-heading">City Council</h2>
-        <p>The seven-member City Council meets on the first and third Tuesday of each month at 6:30&nbsp;p.m. in Council Chambers. Meetings are open to the public and streamed live.</p>
-        <h3>Upcoming Agenda Items</h3>
+      <!-- ===== Typography ===== -->
+      <section class="library-section" id="typography" aria-labelledby="type-heading">
+        <h2 id="type-heading">Typography</h2>
+        <p>Work Sans is the single type family for the city. It is open, friendly, and easy to read on phones, which suits residents of every age looking up city information.</p>
+
+        <div class="specimen">
+          <p class="specimen-label">Work Sans &middot; Google Fonts &middot; 400, 600, 700, 800</p>
+          <p class="specimen-aa" aria-hidden="true">Aa</p>
+        </div>
+
+        <h3>Sample Tags</h3>
+        <dl class="tag-list">
+          <div class="tag-row">
+            <dt><code>&lt;h1&gt;</code> Page title &middot; 800 weight</dt>
+            <dd><p class="sample-h1">Heading One</p></dd>
+          </div>
+          <div class="tag-row">
+            <dt><code>&lt;h2&gt;</code> Section heading &middot; 700 weight</dt>
+            <dd><p class="sample-h2">Heading Two</p></dd>
+          </div>
+          <div class="tag-row">
+            <dt><code>&lt;h3&gt;</code> Sub-section heading &middot; 700 weight</dt>
+            <dd><p class="sample-h3">Heading Three</p></dd>
+          </div>
+          <div class="tag-row">
+            <dt><code>&lt;p&gt;</code> Paragraph &middot; 400 weight, 1.6 line height</dt>
+            <dd><p>The quick brown fox jumps over the lazy dog. Body copy stays in gray/600 for comfortable contrast and a line length under 65 characters.</p></dd>
+          </div>
+          <div class="tag-row">
+            <dt><code>&lt;ul&gt;</code> Unordered list &middot; custom amber check bullet</dt>
+            <dd>
+              <ul class="check-list">
+                <li>Pay a utility bill</li>
+                <li>Reserve a park pavilion</li>
+                <li>Report a pothole</li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
+      </section>
+
+      <!-- ===== Logo ===== -->
+      <section class="library-section" id="logo" aria-labelledby="logo-heading">
+        <h2 id="logo-heading">Logo Mark</h2>
+        <p>The mark pairs Mount Timpanogos with the morning sun. Use the light version on white or gray/050, and the dark version on gray/900.</p>
+
+        <div class="logo-cards">
+          <figure class="logo-card logo-card-light">
+            <img src="images/logo-mark-light.svg" alt="Orem logo mark: teal mountains with a white peak and an amber sun" width="120" height="90">
+            <figcaption><span class="logo-word">Orem</span><span class="logo-card-note">On light</span></figcaption>
+          </figure>
+          <figure class="logo-card logo-card-dark">
+            <img src="images/logo-mark-dark.svg" alt="Orem logo mark: teal mountains with a dark peak and an amber sun" width="120" height="90">
+            <figcaption><span class="logo-word">Orem</span><span class="logo-card-note">On dark</span></figcaption>
+          </figure>
+        </div>
+
+        <h3>Logo Rules</h3>
         <ul class="check-list">
-          <li>Center Street repaving, phase two</li>
-          <li>2027 water utility rate review</li>
-          <li>Public comment on the Downtown Parks Plan</li>
+          <li>Keep clear space equal to the sun's width on every side</li>
+          <li>Show the mark no smaller than 48 pixels wide</li>
+          <li>Never recolor, stretch, or rotate the mountains</li>
         </ul>
       </section>
     </div>
