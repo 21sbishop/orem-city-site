@@ -829,10 +829,28 @@ address {
   padding: 1rem 0;
 }
 
+.footer-bottom-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+}
+
 .footer-bottom p {
   margin: 0;
   max-width: none;
   font-size: 0.875rem;
+  color: #ffffff;
+}
+
+.footer-login {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #e2a64b;
+}
+
+.footer-login:hover {
   color: #ffffff;
 }
 
